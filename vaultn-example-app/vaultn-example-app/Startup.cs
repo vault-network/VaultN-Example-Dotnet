@@ -26,6 +26,9 @@ namespace vaultn_example_app
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddHttpClient();
+            services.AddTransient<IUtilities, Utilities>();
+            services.AddTransient<IVaultNApi, VaultNApi>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

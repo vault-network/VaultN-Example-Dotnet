@@ -1,4 +1,41 @@
 ﻿<Properties StartupConfiguration="{DDC5CA54-589C-4C06-AB10-D0AE5D0B8F27}|Default">
-  <MonoDevelop.Ide.ItemProperties.vaultn-example-app FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="vaultn-example-app/Startup.cs" Line="55" Column="1" />
+      <File FileName="vaultn-example-app/Controllers/VaultnController.cs" />
+      <File FileName="vaultn-example-app/Properties/launchSettings.json" />
+      <File FileName="vaultn-example-app/Program.cs" Line="16" Column="1" />
+      <File FileName="vaultn-example-app/appsettings.Development.json" />
+      <File FileName="vaultn-example-app/appsettings.json" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/3.1.201/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets" />
+      <File FileName="vaultn-example-app/vaultn-example-app.csproj" Line="20" Column="1" />
+      <File FileName="vaultn-example-app/public_privatekey.pfx" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="vaultn-example-app" expanded="True" selected="True">
+            <Node name="vaultn-example-app" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="API" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.vaultn-example-app PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/API/VaultNApi.cs" relfile="vaultn-example-app/API/VaultNApi.cs" line="24" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
