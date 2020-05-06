@@ -22,20 +22,14 @@ namespace vaultn_example_app
 
         private HttpClient CreateClient()
         {
-            using var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", _utilities.GenerateToken());
             return client;
         }
         public async Task<string> Test()
         {
-
-            var client = _httpClientFactory.CreateClient();
-            client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", _utilities.GenerateToken());
-            var result = await client.GetAsync("https://onboarding.vaultn.com/api/v1/ping");
-
-           return "";
+           return await Task.FromResult(_utilities.GenerateToken());
         }
 
         public async Task<string> PingPost()
@@ -70,13 +64,14 @@ namespace vaultn_example_app
             }
         }
 
-        public async Task<BaseResponse> GetAgreements(int pageIndex = 0, int pageSize = 0,bool? onlyActive = null)
+        public async Task<BaseResponse> GetAgreements(int pageIndex = 0, int pageSize = 10,bool? onlyActive = null)
         {
             var client = CreateClient();
 
-            
+
+            var uri = $"{ApiEndPointPrefix.Agreement}?pageIndex={pageIndex}&pageSize={pageSize}";
             var result = 
-                await client.GetAsync($"{ApiEndPointPrefix.Agreement}?pageIndex={pageIndex}&pageSize={pageSize}");
+                await client.GetAsync(uri);
             if (result.IsSuccessStatusCode)
             {
                 return new ApiResponse<IList<AgreementResponse>>
@@ -87,8 +82,14 @@ namespace vaultn_example_app
             }
             else
             {
+
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null) {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
+
                 return error;
             }
         }
@@ -111,6 +112,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -134,6 +140,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -158,6 +169,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -181,6 +197,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -203,6 +224,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -225,6 +251,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -252,6 +283,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -268,15 +304,22 @@ namespace vaultn_example_app
                     $"&pageSize={pageSize}");
             if (result.IsSuccessStatusCode)
             {
-                return new ApiResponse<TransactionResponse>
+                var content = await result.Content.ReadAsStringAsync();
+                Console.WriteLine(content);
+                return new ApiResponse<IList<TransactionResponse>>
                 {
                     IsSuccess =  true,
-                    Result = JsonConvert.DeserializeObject<TransactionResponse>(await result.Content.ReadAsStringAsync())
+                    Result = JsonConvert.DeserializeObject<IList<TransactionResponse>>(content)
                 };
             }
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -300,6 +343,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -327,6 +375,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }
@@ -354,6 +407,11 @@ namespace vaultn_example_app
             else
             {
                 var error = JsonConvert.DeserializeObject<ErrorResponse>(await result.Content.ReadAsStringAsync());
+                if (error == null)
+                {
+                    error = new ErrorResponse();
+                    error.Message = result.StatusCode.ToString();
+                }
                 error.IsSuccess = false;
                 return error;
             }

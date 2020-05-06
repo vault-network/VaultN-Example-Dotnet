@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Md25MYr1jiCXs9UL119af8UAHoDUP9QldBL/uCHgIfGy805G1djAy5UQM5aREdAdXYifzHaT8CQGK+XbR1jc7A==",
+  "dgSpecHash": "2/7VLtwyfrZ1IS/deJDaHIhQvAhgKLN0pLs1EZU7MeeDuSTJWeBgsry1kPF/z5dJADdcYQ8BGkxq7PO7sIe9Ng==",
   "success": true,
   "projectFilePath": "/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/vaultn-example-app.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,7 @@
     "/Users/serhatyalcin/.nuget/packages/system.runtime.serialization.formatters/4.3.0/system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
     "/Users/serhatyalcin/.nuget/packages/system.runtime.serialization.primitives/4.3.0/system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
     "/Users/serhatyalcin/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "/Users/serhatyalcin/.nuget/packages/system.security.cryptography.openssl/4.7.0/system.security.cryptography.openssl.4.7.0.nupkg.sha512",
     "/Users/serhatyalcin/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/serhatyalcin/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "/Users/serhatyalcin/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",

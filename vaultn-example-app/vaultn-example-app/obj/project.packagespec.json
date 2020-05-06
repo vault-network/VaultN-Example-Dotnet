@@ -40,6 +40,10 @@
         "Microsoft.AspNetCore.WebUtilities": {
           "target": "Package",
           "version": "[2.2.0, )"
+        },
+        "System.Security.Cryptography.OpenSsl": {
+          "target": "Package",
+          "version": "[4.7.0, )"
         }
       },
       "imports": [

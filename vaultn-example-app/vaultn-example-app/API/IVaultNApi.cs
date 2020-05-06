@@ -13,13 +13,13 @@ namespace vaultn_example_app
         Task<string> PingPost();
         Task<string> PingGet();
 
-        Task<BaseResponse> GetAgreements(int pageIndex,int pageSize,bool? onlyActive);
+        Task<BaseResponse> GetAgreements(int pageIndex = 0,int pageSize = 100,bool? onlyActive = null);
 
         Task<BaseResponse> GetSingleAgreement(string guid);
 
         Task<BaseResponse> CreateProduct(ProductRequest product);
 
-        Task<BaseResponse> GetProducts(int pageIndex, int pageSize);
+        Task<BaseResponse> GetProducts(int pageIndex = 0, int pageSize = 100);
 
         Task<BaseResponse> UpdateProduct(string productGuid, ProductRequest product);
 
@@ -30,7 +30,7 @@ namespace vaultn_example_app
         Task<BaseResponse> ImportTransaction(string productGuid, string agreementGuid, string clientReference,
             IList<string> serials);
 
-        Task<BaseResponse> GetTransactions(int pageIndex, int pageSize);
+        Task<BaseResponse> GetTransactions(int pageIndex = 0, int pageSize = 100);
 
         Task<BaseResponse> GetSingleTransaction(string transactionGuid);
 

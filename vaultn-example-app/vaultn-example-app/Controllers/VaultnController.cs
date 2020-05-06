@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using vaultn_example_app.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,37 +17,93 @@ namespace vaultn_example_app.Controllers
             _api = api;
         }
         // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("agreements")]
+        public async Task<BaseResponse> GetAgreements()
         {
-            return new string[] { "value1", "value2" };
+            return await _api.GetAgreements();
         }
 
-        // GET api/values/5
-        [HttpGet("GenerateToken")]
-        public string GenerateToken(int id)
+        [HttpGet("agreement/{agreementGuid}")]
+        public async Task<BaseResponse> GetSingleAgreement(string agreementGuid)
         {
-            Utilities util = new Utilities();
-            return util.GenerateToken();
+            return await _api.GetSingleAgreement(agreementGuid);
         }
 
-        // POST api/values
-        [HttpGet("Test")]
-        public async Task<string> Test()
+        [HttpGet("ping")]
+        public async Task<string> PingGet()
+        {
+            return await _api.PingGet();
+        }
+
+        [HttpPost("ping")]
+        public async Task<string> PingPost()
+        {
+            return await _api.PingGet();
+        }
+
+        [HttpPost("CreateProduct")]
+        public async Task<BaseResponse> CreateProduct([FromBody]ProductRequest product)
+        {
+            return await _api.CreateProduct(product);
+        }
+
+        [HttpGet("Products")]
+        public async Task<BaseResponse> GetProducts()
+        {
+            return await _api.GetProducts();
+        }
+
+        [HttpPost("Products/{productGuid}")]
+        public async Task<BaseResponse> GetProducts(string productGuid,[FromBody]ProductRequest product)
+        {
+            return await _api.UpdateProduct(productGuid, product);
+        }
+
+        [HttpGet("Products/{productGuid}")]
+        public async Task<BaseResponse> GetSingleProduct(string productGuid)
+        {
+            return await _api.GetSingleProduct(productGuid);
+        }
+
+        [HttpGet("producttypes")]
+        public async Task<BaseResponse> GetProductTypes()
+        {
+            return await _api.GetProductTypes();
+        }
+
+        [HttpPost("transaction/import/{productGuid}/{agreementGuid}/{clientReference}")]
+        public async Task<BaseResponse> TransactionImport(string productGuid, string agreementGuid, string clientReference, [FromBody] List<string> serials)
+        {
+            return await _api.ImportTransaction(productGuid, agreementGuid, clientReference, serials);
+        }
+
+        [HttpGet("transactions/list/{pageIndex}/{pageSize}")]
+        public async Task<BaseResponse> TransactionList(int pageIndex, int pageSize)
+        {
+            return await _api.GetTransactions(pageIndex, pageSize);
+        }
+        [HttpGet("transactions/{transactionGuid}")]
+        public async Task<BaseResponse> SingleTransaction(string transactionGuid)
+        {
+            return await _api.GetSingleTransaction(transactionGuid);
+        }
+
+        [HttpGet("transactions/extract/{productGuid}/{ipAddress}/{clientReference}/{agreementGuid}")]
+        public async Task<BaseResponse> TransactionExtract(string productGuid, string ipAddress, string clientReference, string agreementGuid)
+        {
+            return await _api.ExtractTransaction(productGuid, ipAddress, clientReference, agreementGuid);
+        }
+
+        [HttpGet("transactions/blacklist/{productGuid}/{keyCode}/{clientReference}/{agreementGuid}")]
+        public async Task<BaseResponse> TransactionExtract(string productGuid, string keyCode, string clientReference)
+        {
+            return await _api.BlacklistTransaction(productGuid, keyCode, clientReference);
+        }
+
+        [HttpGet("token")]
+        public async Task<string> GenerateToken()
         {
             return await _api.Test();
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
