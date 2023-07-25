@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using vaultn_example_app.Models;
 
@@ -9,6 +10,7 @@ using vaultn_example_app.Models;
 
 namespace vaultn_example_app.Controllers
 {
+    
     [Route("api/[controller]")]
     public class VaultnController : Controller
     {
@@ -26,6 +28,7 @@ namespace vaultn_example_app.Controllers
         [HttpGet("agreement/{agreementGuid}")]
         public async Task<BaseResponse> GetSingleAgreement(string agreementGuid)
         {
+            if (string.IsNullOrEmpty(agreementGuid)) throw new ArgumentNullException();
             return await _api.GetSingleAgreement(agreementGuid);
         }
 
@@ -74,6 +77,23 @@ namespace vaultn_example_app.Controllers
         [HttpPost("transaction/import/{productGuid}/{agreementGuid}/{clientReference}")]
         public async Task<BaseResponse> TransactionImport(string productGuid, string agreementGuid, string clientReference, [FromBody] List<string> serials)
         {
+            if (serials == null)
+            {
+                serials = new List<string>();
+                for (int i = 0; i < 10; i++)
+                {
+                    serials.Add(Guid.NewGuid().ToString());
+                }
+            }
+
+            if (serials.Count == 0)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    serials.Add(Guid.NewGuid().ToString());
+                }
+            }
+
             return await _api.ImportTransaction(productGuid, agreementGuid, clientReference, serials);
         }
 

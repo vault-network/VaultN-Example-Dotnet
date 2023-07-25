@@ -27,3 +27,9 @@
 /Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/obj/Debug/netcoreapp3.1/vaultn-example-app.dll
 /Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/obj/Debug/netcoreapp3.1/vaultn-example-app.pdb
 /Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/obj/Debug/netcoreapp3.1/vaultn-example-app.genruntimeconfig.cache
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Annotations.dll
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/serhatyalcin/Sources/vaultn-example-app/vaultn-example-app/vaultn-example-app/obj/Debug/netcoreapp3.1/vaultn-example-app.MvcApplicationPartsAssemblyInfo.cs

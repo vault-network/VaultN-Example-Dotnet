@@ -36,7 +36,7 @@ namespace vaultn_example_app
         {
             var client = CreateClient();
 
-            var result = 
+            using var result = 
                 await client.PostAsync(ApiEndPointPrefix.Ping, new StringContent(""));
             if (result.IsSuccessStatusCode)
             {
@@ -70,7 +70,7 @@ namespace vaultn_example_app
 
 
             var uri = $"{ApiEndPointPrefix.Agreement}?pageIndex={pageIndex}&pageSize={pageSize}";
-            var result = 
+            using var result = 
                 await client.GetAsync(uri);
             if (result.IsSuccessStatusCode)
             {
@@ -267,7 +267,7 @@ namespace vaultn_example_app
 
             var result =
                 await client.PostAsync(
-                    $"{ApiEndPointPrefix.Transaction}" +
+                    $"{ApiEndPointPrefix.Transaction}/import" +
                     $"?productGUID={productGuid}" +
                     $"&agreementGUID={agreementGuid}" +
                     $"&clientReference={clientReference}",

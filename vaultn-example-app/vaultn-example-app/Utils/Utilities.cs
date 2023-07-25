@@ -24,21 +24,26 @@ namespace vaultn_example_app
             var cert = new X509Certificate2("vaultn-test.pfx", "1q2w");
             var creds = new X509SigningCredentials(cert);
 
+            
+            //You need to replace this with your own GUID
+            var guid = Guid.NewGuid();
             var tokenDescriptor = new SecurityTokenDescriptor
             {
+                
                 Issuer = "Self",
                 Audience = "VaultN",
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, "CEC83A59-B82D-4866-8419-BD219CE7AEF2")
+
+                    new Claim(JwtRegisteredClaimNames.Sub, guid.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = creds
 
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-            
+            var retval = tokenHandler.WriteToken(token);
+            return retval;
         }
 
         public  string GenerateTokenWithCert()

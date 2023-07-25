@@ -1,0 +1,60 @@
+﻿<Properties StartupConfiguration="{DDC5CA54-589C-4C06-AB10-D0AE5D0B8F27}|Default">
+  <MonoDevelop.Ide.ItemProperties.vaultn-example-test FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="vaultn-example-app/API/VaultNApi.cs">
+    <Files>
+      <File FileName="vaultn-example-app/Startup.cs" Line="29" Column="38" />
+      <File FileName="vaultn-example-app/Controllers/VaultnController.cs" />
+      <File FileName="vaultn-example-app/Properties/launchSettings.json" />
+      <File FileName="vaultn-example-app/Program.cs" />
+      <File FileName="vaultn-example-app/appsettings.Development.json" />
+      <File FileName="vaultn-example-app/appsettings.json" />
+      <File FileName="vaultn-example-app/vaultn-example-app.csproj" />
+      <File FileName="vaultn-example-app/public_privatekey.pfx" />
+      <File FileName="vaultn-example-app/API/IVaultNApi.cs" />
+      <File FileName="vaultn-example-app/Utils/IUtilities.cs" />
+      <File FileName="vaultn-example-app/Utils/Utilities.cs" />
+      <File FileName="vaultn-example-app/API/VaultNApi.cs" Line="300" Column="25" />
+      <File FileName="vaultn-example-app/Utils/ApiEndPointPrefix.cs" />
+      <File FileName="vaultn-example-app/Models/AgreementResponse.cs" />
+      <File FileName="vaultn-example-app/Models/ApiResponse.cs" />
+      <File FileName="vaultn-example-app/Models/BaseResponse.cs" />
+      <File FileName="vaultn-example-app/Models/ErrorResponse.cs" />
+      <File FileName="vaultn-example-app/Models/ProductRequest.cs" />
+      <File FileName="vaultn-example-app/Models/ProductResponse.cs" />
+      <File FileName="vaultn-example-app/Models/ProductTypeResponse.cs" />
+      <File FileName="vaultn-example-app/Models/Serial.cs" />
+      <File FileName="vaultn-example-app/Models/TransactionResponse.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="vaultn-example-app" expanded="True">
+            <Node name="vaultn-example-app" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="API" expanded="True">
+                <Node name="VaultNApi.cs" selected="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Utils" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+            <Node name="vaultn-example-test" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.vaultn-example-app PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
